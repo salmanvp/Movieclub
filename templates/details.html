@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-sm-5">
+            <img src="http://127.0.0.1:8000/media/{{d.image}}" style="height:500px;width:500px">
+        </div>
+        <div class="col-sm-5">
+            <h2 class="card-title text-uppercase">{{d.name}}</h2>
+            <p>{{d.desc}}</p>
+            <a href="{% url 'app1:edit' d.slug %}" class="btn btn-success">EDIT</a>
+            <a href="{% url 'app1:delete' d.slug %}" class="btn btn-danger">DELETE</a>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

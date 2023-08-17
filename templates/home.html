@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid ">
+    <div class="row">
+        {% for i in b %}
+        <div class="col-sm-4">
+            <div class="card mt-4" style="width: 20rem; height:430px;">
+                <img src="http://127.0.0.1:8000/media/{{i.image}}" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body">
+                    <h2 class="card-title">{{i.name}}</h2>
+                    <p class="card-text" style="text-align:justify">{{i.desc}}</p>
+                    <div class="text-center">
+                        <a href="{% url 'app1:details' i.slug %}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
